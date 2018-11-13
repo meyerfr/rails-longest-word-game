@@ -1,0 +1,11 @@
+<h1>Result</h1>
+
+<% if @answer == 'Congratulations!' %>
+  <p><strong>Congratulations!</strong> <%= @word %> is a valid English word!</p>
+  <% elsif @answer == 'not english' %>
+    <p>Sorry but <strong><%= @word %></strong> does not seem to be a valid English word!</p>
+  <% elsif @answer == 'not grid' %>
+    <p>Sorry but <strong><%= @word %></strong> can´t be built out of <%= @grid.join(', ') %></p>
+  <% end %>
+<br>
+<%= link_to "Play again", new_path %>
